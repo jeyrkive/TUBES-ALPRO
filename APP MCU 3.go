@@ -356,7 +356,6 @@ func main_hapus_paket(A *tabPasien, B *tabLayanan, n, m *int) {
 		fmt.Println("---------------------------------------------")
 	} else {
 		hapus_paket(A, B, n, m, idx)
-		fmt.Println("Paket Berhasil Dihapus")
 		fmt.Println("---------------------------------------------")
 	}
 
@@ -375,6 +374,7 @@ func hapus_paket(A *tabPasien, B *tabLayanan, n, m *int, idx int) {
 			(*B)[i] = (*B)[i+1]
 		}
 		*m--
+		fmt.Println("Paket Berhasil Dihapus")
 	}
 
 }
@@ -483,7 +483,6 @@ func hitung_pemasukkan(A tabPasien, n, y1, m1, d1, y2, m2, d2 int) {
 	var hari1, hari2, hari_cek int
 	hari1 = y1*360 + bulan_hari(m1, y1) + d1
 	hari2 = y2*360 + bulan_hari(m2, y2) + d2
-	fmt.Println(hari1, hari2, hari_cek)
 
 	for i = 0; i < n; i++ {
 		hari_cek = A[i].waktu_check_up.tahun*360 + bulan_hari(A[i].waktu_check_up.bulan, A[i].waktu_check_up.tahun) + A[i].waktu_check_up.tanggal
